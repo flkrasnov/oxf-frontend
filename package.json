@@ -1,0 +1,35 @@
+{
+  "name": "oxfrd-stydy-loans-frontend",
+  "version": "1.0.0",
+  "description": "oxfrd stydy loans website frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "del": "^2.2.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^3.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.0.0",
+    "gulp-series": "^1.0.2",
+    "gulp-sourcemaps": "^1.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flkrasnov/oxf-frontend.git"
+  },
+  "author": "Oxf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flkrasnov/oxf-frontend/issues"
+  },
+  "homepage": "https://github.com/flkrasnov/oxf-frontend#readme",
+  "dependencies": {
+    "gulp-line-ending-corrector": "^1.0.1"
+  }
+}
