@@ -1,3 +1,4 @@
+/* COMMON STYLES UNDER THIS COMMENT */
 html,
 body {
   height: 100%;
@@ -6,6 +7,147 @@ body {
   font-size: 18px;
 }
 
+@media screen and (min-width: 500px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.button-red {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 18px;
+  line-height: 18px;
+  background-color: #be0f34;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+/* COMMON STYLES OVER THIS COMMENT */
+
 header {
+  padding: 10px;
   background: #001c54;
+  color: #fff;
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  .logo {
+    margin-bottom: 10px;
+    img {
+      height: 40px;
+    }
+  }
+  .phone {
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    padding: 20px;
+    .flex-container {
+      align-items: baseline;
+      flex-direction: row;
+    }
+    .logo {
+      margin-bottom: 0;
+      img {
+        height: 60px;
+      }
+    }
+  }
+}
+
+.hello {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  background-image: url(../images/hello.jpg);
+  background-size: cover;
+  .advertisement {
+    width: 75%;
+    max-width: 366px;
+    padding: 20px;
+    background: #fff;
+    color: #333;
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 25px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.info {
+  padding: 20px 10px;
+  &_block {
+    margin-bottom: 30px;
+    &_img {
+      margin-bottom: 30px;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    &_heading {
+      margin: 0 0 20px 0;
+      font-size: 25px;
+      font-family: 'PT Serif', Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    }
+  }
+}
+
+footer {
+  padding: 20px;
+  background: #001c54;
+  color: #fff;
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      margin: 0;
+    }
+  }
+  .footer_copyright {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  footer {
+    padding: 10px;
+    .flex-container {
+      align-items: baseline;
+      flex-direction: row;
+    }
+    .footer_copyright {
+      margin-bottom: 0;
+    }
+  }
 }
