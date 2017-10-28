@@ -2,14 +2,15 @@
 html,
 body {
   height: 100%;
-  background: #fff;
   font-family: 'PT Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
+  background: #fff;
+  color: #333;
 }
 
 @media screen and (min-width: 500px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -21,14 +22,16 @@ body {
 .button-red {
   display: inline-block;
   margin: 0;
-  padding: 5px 10px;
+  padding: 7px 9px;
   font-size: 18px;
-  line-height: 18px;
+  font-weight: 400;
+  line-height: 1;
   background-color: #be0f34;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 3px;
+  border: 0;
 }
 
 /* COMMON STYLES OVER THIS COMMENT */
@@ -75,14 +78,16 @@ header {
 
 .hello {
   display: flex;
-  justify-content: center;
+  flex-direction: column-reverse;
+  justify-content: bottom;
   align-items: center;
   min-height: 60vh;
+  padding: 20px;
   background-image: url(../images/hello.jpg);
   background-size: cover;
   .advertisement {
     width: 75%;
-    max-width: 366px;
+    max-width: 250px;
     padding: 20px;
     background: #fff;
     color: #333;
@@ -96,8 +101,29 @@ header {
       margin: 0 0 10px 0;
       font-size: 20px;
       font-weight: 400;
-      line-height: 1;
       text-transform: uppercase;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .hello {
+    min-height: 65vh;
+    align-items: left;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hello {
+    min-height: 70vh;
+    .advertisement {
+      max-width: 365px;
+      h1 {
+        font-size: 35px;
+      }
+      h2 {
+        font-size: 30px;
+      }
     }
   }
 }
@@ -111,12 +137,96 @@ header {
       img {
         display: block;
         width: 100%;
+        max-width: 450px;
+        margin: auto;
       }
+    }
+    &_text {
+      font-family: 'PT Serif', Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     }
     &_heading {
       margin: 0 0 20px 0;
       font-size: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .info {
+    padding: 20px 0;
+    &_block {
+      display: flex;
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+      }
+      &_img {
+        width: 50%;
+        padding: 0 20px;
+        margin-bottom: 0;
+        img {
+          max-width: 100%;
+        }
+      }
+      &_text {
+        width: 50%;
+        padding: 0 20px;
+      }
+      &_heading {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.contact {
+  padding: 0 10px;
+  margin-bottom: 40px;
+  &_heading {
+    display: block;
+    font-family: 'PT Serif', Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 25px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  &_form {
+    &_field {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      margin: 0 0 20px 0;
+      border: 1px solid #d8d8d8;
+      border-radius: 3px;
+    }
+  }
+  &_info {
+    margin-bottom: 50px;
+    &_heading {
       font-family: 'PT Serif', Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+      font-size: 24px;
+      margin: 20px 0;
+      &:first-of-type {
+        margin-top: 44px;
+      }
+    }
+    &_scedule {
+      margin: 0 0 10px 0;
+      span {
+        margin-left: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .contact {
+    display: flex;
+    &_form {
+      width: 50%;
+      padding: 0 20px;
+    }
+    &_info {
+      width: 50%;
+      padding: 0 20px;
     }
   }
 }
