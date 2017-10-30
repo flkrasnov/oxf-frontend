@@ -76,6 +76,12 @@ header {
   }
 }
 
+.outer {
+  background-image: url(../images/hello.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
 .hello {
   display: flex;
   flex-direction: column-reverse;
@@ -83,8 +89,6 @@ header {
   align-items: center;
   min-height: 60vh;
   padding: 20px;
-  background-image: url(../images/hello.jpg);
-  background-size: cover;
   .advertisement {
     width: 75%;
     max-width: 250px;
@@ -251,7 +255,7 @@ footer {
 
 @media screen and (min-width: 500px) {
   footer {
-    padding: 10px;
+    padding: 20px;
     .flex-container {
       align-items: baseline;
       flex-direction: row;
@@ -259,5 +263,35 @@ footer {
     .footer_copyright {
       margin-bottom: 0;
     }
+  }
+}
+
+/* ------------------ APPLY.HTML ------------------ */
+
+.apply_head {
+  min-height: 55vh;
+  background-image: url(../images/head.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.apply-form {
+  margin-top: -130px;
+  padding: 20px;
+  background-color: #fff;
+  &_row {
+    display: block;
+    margin-bottom: 15px;
+    input {
+      margin: 0;
+      padding: 5px 10px;
+      border: 1px solid #d9d9d9;
+      border-radius: 3px;
+    }
+  }
+  hr {
+    font-size: 0;
+    margin: 30px 0;
+    border: 1px solid #d9d9d9;
   }
 }

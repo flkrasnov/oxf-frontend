@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta id="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta id="format-detection" content="telephone=no">
+  <link rel="icon" href="icons/favicon.ico">
+  <title>Apply now!</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  //= modules/header.html
+
+  <main>
+    <div class="apply_head"></div>
+
+    <div class="apply-form container">
+      <form class="apply-form_wrap" action="">
+        <h1 class="apply-form_heading">TAKE YOUR CHANCE FOR OXFORD STUDIES LOAN</h1>
+
+        <label class="apply-form_row" for="firstName">
+          First name
+          <input type="text" id="firstName">
+        </label>
+        <label class="apply-form_row" for="lastName">
+          Last name
+          <input type="text" id="lastName">
+        </label>
+
+        <hr>
+
+        <label class="apply-form_row" for="address">
+          Address line
+          <input type="text" id="address">
+        </label>
+        <label class="apply-form_row" for="city">
+          City
+          <input type="text" id="city">
+        </label>
+        <label class="apply-form_row" for="region">
+          State/Province/Region
+          <input type="text" id="region">
+        </label>
+        <label class="apply-form_row" for="zip">
+          ZIP/Postal Code
+          <input type="text" id="zip">
+        </label>
+        <label class="apply-form_row" for="country">
+          Country
+          <input type="text" id="country">
+        </label>
+
+        <hr>
+
+        <label class="apply-form_row" for="email">
+          Email
+          <input type="email" id="email">
+        </label>
+        <label class="apply-form_row" for="phone">
+          Mobile phone number
+          <input type="text" id="phone">
+        </label>
+
+        <hr>
+
+        <label class="apply-form_row" for="pass">
+          Choose a password
+          <input type="password" id="pass">
+        </label>
+        <label class="apply-form_row" for="confirmPass">
+          Re-enter password
+          <input type="password" id="confirmPass">
+        </label>
+
+        <hr>
+
+        <div class="apply-form_requirements">
+          <h5>Upload confirmation documents</h5>
+          <p>Please make sure that the proof of address document meets the following requirements before uploading.</p>
+
+          <ul>
+            <li>We only accept legal and traceable documents (scanned papers) displaying the company's <span>full name</span> and <span>registered address</span>: <b> Certificate of Registered Office</b> or a similar document in your jurisdiction.</li>
+            <li>The documents are in <b>English</b> (Latin letters), otherwise certified translations should be provided.</li>
+            <li>The documents must be standard <b>full-sized pages</b> (uncropped).</li>
+            <li>Scanned images quality: <b>color, high resolution</b> (at least <b>150 dpi</b>).</li>
+          </ul>
+
+          <p>Any unclear, altered, low-resolution, or poor quality images will be rejected.</p>
+        </div>
+
+        <div class="apply-form_file">
+          <label class="apply-form_row" for="docs">
+            Scan of the document
+            <input type="file" id="docs">
+          </label>
+
+          <ul class="apply-form_file_items">
+            <li>example</li>
+          </ul>
+
+          <p>You can upload up to 5 files.</p>
+          <p>Maximum file size: 4mb.</p>
+          <p>Supported file types: <b>.jpg, .jpeg, .png, .bmp, .tiff, .pdf</b></p>
+        </div>
+
+        <div class="apply-form_agree">
+          <p>By clicking the button below, I agree with the terms and <br>
+          conditions outlined in the <a href="">Legal agreements for OKPAY services</a></p>
+        </div>
+
+        <hr>
+
+        <div class="apply-form_capcha"></div>
+
+        <div class="apply-form_submit">
+          <input type="submit" class="button-red" value="agree and apply">
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  //= modules/footer.html
+
+</body>
+
+</html>
