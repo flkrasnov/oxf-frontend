@@ -1,4 +1,4 @@
-/* COMMON STYLES UNDER THIS COMMENT */
+/*common styles*/ 
 html,
 body {
   height: 100%;
@@ -34,7 +34,10 @@ body {
   border: 0;
 }
 
-/* COMMON STYLES OVER THIS COMMENT */
+a {
+  color: #357bb8;
+  text-decoration: none;
+}
 
 header {
   padding: 10px;
@@ -75,6 +78,39 @@ header {
     }
   }
 }
+
+footer {
+  padding: 20px;
+  background: #001c54;
+  color: #fff;
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      margin: 0;
+    }
+  }
+  .footer_copyright {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  footer {
+    padding: 20px;
+    .flex-container {
+      align-items: baseline;
+      flex-direction: row;
+    }
+    .footer_copyright {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*index.html*/ 
 
 .outer {
   background-image: url(../images/hello.jpg);
@@ -235,63 +271,168 @@ header {
   }
 }
 
-footer {
-  padding: 20px;
-  background: #001c54;
-  color: #fff;
-  .flex-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    p {
-      margin: 0;
-    }
-  }
-  .footer_copyright {
-    margin-bottom: 10px;
-  }
-}
-
-@media screen and (min-width: 500px) {
-  footer {
-    padding: 20px;
-    .flex-container {
-      align-items: baseline;
-      flex-direction: row;
-    }
-    .footer_copyright {
-      margin-bottom: 0;
-    }
-  }
-}
-
-/* ------------------ APPLY.HTML ------------------ */
+/*apply.html*/ 
 
 .apply_head {
-  min-height: 55vh;
+  min-height: 50vh;
   background-image: url(../images/head.jpg);
   background-size: cover;
   background-position: 50% 50%;
 }
 
+@media screen and (min-width: 500px) {
+  .apply_head {
+    min-height: 75vh;
+  }
+}
+
 .apply-form {
-  margin-top: -130px;
-  padding: 20px;
+  padding: 20px 10px;
   background-color: #fff;
+  &_heading {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 25px;
+    text-align: center;
+  }
   &_row {
     display: block;
     margin-bottom: 15px;
+    &_caption {
+      display: block;
+      margin-bottom: 10px;
+      color: #373737;
+    }
     input {
+      box-sizing: border-box;
+      width: 100%;
       margin: 0;
       padding: 5px 10px;
       border: 1px solid #d9d9d9;
       border-radius: 3px;
+      box-shadow: inset 0px 2px 3px 0px rgba(150,150,150,0.1);
+      color: #373737;
+      &:focus {
+        outline: 0;
+        border: 1px solid #001c54;
+        box-shadow: 0 0 2px #001c54;
+      }
+      &[type="file"] {
+        display: none;
+      }
+      &[type="email"]:valid {
+        border-color: green;
+      }
+      &.inputValid {
+        border-color: green;
+      }
+      &.inputInvalid {
+        border-color: red;
+      }
+    }
+    &[for="docs"] {
+      span {
+        display: inline-block;
+        padding: 10px 15px;
+        border: 1px solid #d9d9d9;
+        border-radius: 3px;
+        box-shadow: inset 0px 1px 2px 0px rgba(150,150,150,0.1);
+      }
+      &:before {
+        content: "Scan of the document:";
+        display: block;
+        margin-bottom: 10px;
+      }
     }
   }
   hr {
     font-size: 0;
     margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #d9d9d9;
+  }
+  &_requirements {
+    line-height: 1.3;
+    h5 {
+      margin: 0;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 400;
+    }
+    ul {
+      padding-left: 20px;
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &_file {
     border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    padding: 20px;
+    &_items {
+      padding: 0;
+      list-style: none;
+      color: #357bb8;
+      li {
+        margin-bottom: 10px;
+      }
+    }
+    p {
+      font-size: 13px;
+      line-height: 1.3;
+      color: #999999;
+      margin: 0;
+    }
+  }
+  &_captcha {
+    margin-bottom: 30px;
+    overflow: scroll;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .apply-form {
+    padding: 20px;
+    &_heading {
+      font-size: 35px;
+    }
+    &_captcha {
+      overflow: visible;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .apply-form {
+    margin-top: -130px;
+    &_heading {
+      font-size: 40px;
+      margin: 15px 0 45px;
+    }
+    &_row {
+      &_caption {
+        max-width: 230px;
+        width: 100%;
+        float: left;
+        clear: both;
+      }
+      input {
+        min-width: 425px;
+        width: auto;
+      }
+      &[for="docs"] {
+        &:before {
+          display: inline-block;
+          max-width: 230px;
+          margin-right: 30px;
+        }
+      }
+    }
+    &_file {
+      p {
+        margin-left: 205px;
+      }
+    }
   }
 }

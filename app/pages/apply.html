@@ -3,15 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta id="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta id="format-detection" content="telephone=no">
+  <meta name="format-detection" content="telephone=no">
   <link rel="icon" href="icons/favicon.ico">
-  <title>Apply now!</title>
+  <title>Apply now</title>
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="vendor/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -22,61 +24,61 @@
     <div class="apply_head"></div>
 
     <div class="apply-form container">
-      <form class="apply-form_wrap" action="">
+      <form id="mainApplyForm" class="apply-form_wrap" action="">
         <h1 class="apply-form_heading">TAKE YOUR CHANCE FOR OXFORD STUDIES LOAN</h1>
 
         <label class="apply-form_row" for="firstName">
-          First name
-          <input type="text" id="firstName">
+          <span class="apply-form_row_caption">First name</span>
+          <input type="text" id="firstName" oninput="stringValidation()" required>
         </label>
         <label class="apply-form_row" for="lastName">
-          Last name
-          <input type="text" id="lastName">
+          <span class="apply-form_row_caption">Last name</span>
+          <input type="text" id="lastName" oninput="stringValidation()" required>
         </label>
 
         <hr>
 
         <label class="apply-form_row" for="address">
-          Address line
-          <input type="text" id="address">
+          <span class="apply-form_row_caption">Address line</span>
+          <input type="text" id="address" oninput="stringValidation()" required>
         </label>
         <label class="apply-form_row" for="city">
-          City
-          <input type="text" id="city">
+          <span class="apply-form_row_caption">City</span>
+          <input type="text" id="city" oninput="stringValidation()" required>
         </label>
         <label class="apply-form_row" for="region">
-          State/Province/Region
-          <input type="text" id="region">
+          <span class="apply-form_row_caption">State/Province/Region</span>
+          <input type="text" id="region" oninput="stringValidation()" required>
         </label>
         <label class="apply-form_row" for="zip">
-          ZIP/Postal Code
-          <input type="text" id="zip">
+          <span class="apply-form_row_caption">ZIP/Postal Code</span>
+          <input type="text" id="zip" oninput="numberValidation()" required>
         </label>
         <label class="apply-form_row" for="country">
-          Country
-          <input type="text" id="country">
+          <span class="apply-form_row_caption">Country</span>
+          <input type="text" id="country" oninput="stringValidation()" required>
         </label>
 
         <hr>
 
         <label class="apply-form_row" for="email">
-          Email
-          <input type="email" id="email">
+          <span class="apply-form_row_caption">Email</span>
+          <input type="email" id="email" required>
         </label>
         <label class="apply-form_row" for="phone">
-          Mobile phone number
-          <input type="text" id="phone">
+          <span class="apply-form_row_caption">Mobile phone number</span>
+          <input type="text" id="phone" required>
         </label>
 
         <hr>
 
         <label class="apply-form_row" for="pass">
-          Choose a password
-          <input type="password" id="pass">
+          <span class="apply-form_row_caption">Choose a password</span>
+          <input type="password" id="pass" required>
         </label>
         <label class="apply-form_row" for="confirmPass">
-          Re-enter password
-          <input type="password" id="confirmPass">
+          <span class="apply-form_row_caption">Re-enter password</span>
+          <input type="password" id="confirmPass" required>
         </label>
 
         <hr>
@@ -97,13 +99,11 @@
 
         <div class="apply-form_file">
           <label class="apply-form_row" for="docs">
-            Scan of the document
-            <input type="file" id="docs">
+            <span role="button">Add document</span>
+            <input type="file" id="docs" accept=".jpg, .jpeg, .png, .bmp, .tiff, .pdf" onchange="documentsAdded()" multiple required>
           </label>
 
-          <ul class="apply-form_file_items">
-            <li>example</li>
-          </ul>
+          <ul id="documentsAdded" class="apply-form_file_items"></ul>
 
           <p>You can upload up to 5 files.</p>
           <p>Maximum file size: 4mb.</p>
@@ -111,13 +111,14 @@
         </div>
 
         <div class="apply-form_agree">
-          <p>By clicking the button below, I agree with the terms and <br>
-          conditions outlined in the <a href="">Legal agreements for OKPAY services</a></p>
+          <p>By clicking the button below, I agree with the terms and conditions outlined in the <a href="https://www.okpay.com/gb-en/company/agreements">Legal agreements for OKPAY services</a></p>
         </div>
 
         <hr>
 
-        <div class="apply-form_capcha"></div>
+        <div class="apply-form_captcha">
+          <div class="g-recaptcha" data-sitekey="6LcUnzYUAAAAAL696Vzegs3YEiK174qql5DCN2MV"></div>
+        </div>
 
         <div class="apply-form_submit">
           <input type="submit" class="button-red" value="agree and apply">
@@ -129,6 +130,8 @@
 
   //= modules/footer.html
 
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>
